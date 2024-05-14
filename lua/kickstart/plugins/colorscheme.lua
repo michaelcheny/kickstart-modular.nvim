@@ -21,8 +21,8 @@ return {
   -- add catppuccin
   {
     'catppuccin/nvim',
-    lazy = true,
     name = 'catppuccin',
+    priority = 1000,
     config = function()
       require('catppuccin').setup {
         flavour = 'macchiato',
@@ -68,7 +68,7 @@ return {
     },
   },
 
-  -- Configure LazyVim to load gruvbox
+  -- Configure LazyVim to load catppuccin
   {
     'LazyVim/LazyVim',
     opts = {

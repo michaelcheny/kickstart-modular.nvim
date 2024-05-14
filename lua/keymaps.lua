@@ -12,7 +12,8 @@ vim.keymap.set('n', '<leader>E', vim.diagnostic.open_float, { desc = 'Show diagn
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- Vim-test
-vim.keymap.set('n', '<leader>tt', ':TestNearest -strategy=neovim_sticky<CR>', { desc = 'Run nearest test in new terminal' })
+vim.keymap.set('n', '<leader>tt', ':TestNearest -strategy=neovim_sticky<CR>', { desc = 'Run nearest [T]est in new [T]erminal' })
+vim.keymap.set('n', '<leader>tf', ':TestFile -strategy=neovim_sticky<CR>', { desc = 'Run [T]est [F]ile in new Terminal' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
