@@ -64,10 +64,46 @@ return {
             i = {
               -- ['<c-enter>'] = 'to_fuzzy_refine',
               ['<c-d>'] = require('telescope.actions').delete_buffer,
+              ['<c-j>'] = require('telescope.actions').move_selection_next,
+              ['<c-k>'] = require('telescope.actions').move_selection_previous,
+            },
+          },
+          path_display = {
+            'filename_first',
+          },
+        },
+        pickers = {
+          find_files = {
+            hidden = true,
+            -- needed to exclude some files & dirs from general search
+            -- when not included or specified in .gitignore
+            find_command = {
+              'rg',
+              '--files',
+              '--hidden',
+              '--glob=!**/build/*',
+              '--glob=!**/dist/*',
+              '--glob=!**/yarn.lock',
+              '--glob=!**/package-lock.json',
+              '--glob=!**/.bundle/*',
+              '--glob=!**/.git/*',
+              '--glob=!**/.dockerignore',
+              '--glob=!**/.devcontainer/*',
+              '--glob=!**/.fonts/*',
+              '--glob=!**/.irb_history',
+              '--glob=!**/.irbrc',
+              '--glob=!**/.idea/*',
+              '--glob=!**/.pryrc',
+              '--glob=!**/.rspec',
+              '--glob=!**/.ruby-lsp/*',
+              '--glob=!**/.rubocop_todo.yml',
+              '--glob=!**/.ruby-gemset',
+              '--glob=!**/.traceroute.yml',
+              '--glob=!**/.travis.yml',
+              '--glob=!**/.vscode/*',
             },
           },
         },
-        -- pickers = {}
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
