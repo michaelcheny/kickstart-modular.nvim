@@ -14,7 +14,7 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagn
 vim.keymap.set('n', '<leader>E', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
--- Center bugger while navigating
+-- Center buffer while navigating
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '{', '{zz')
@@ -28,6 +28,10 @@ vim.keymap.set('n', '<C-o>', '<C-o>zz')
 vim.keymap.set('n', '*', '*zz')
 vim.keymap.set('n', '#', '#zz')
 
+vim.keymap.set('n', '<leader>bd', '<cmd>:bd<cr>', { desc = '[D]elete Buffer and Window' })
+-- swap between last 2 buffers
+vim.keymap.set('n', '<leader><tab>', '<C-^>', { desc = 'Switch to last buffer' })
+
 -- Move Lines
 vim.keymap.set('n', '<A-j>', '<cmd>m .+1<cr>==', { desc = 'Move Down' })
 vim.keymap.set('n', '<A-k>', '<cmd>m .-2<cr>==', { desc = 'Move Up' })
@@ -37,11 +41,16 @@ vim.keymap.set('v', '<A-j>', ":m '>+1<cr>gv=gv", { desc = 'Move Down' })
 vim.keymap.set('v', '<A-k>', ":m '<-2<cr>gv=gv", { desc = 'Move Up' })
 
 -- H and L to jump start/end of line
-vim.keymap.set('n', 'L', '$')
-vim.keymap.set('n', 'H', '^')
+vim.keymap.set('n', '<S-l>', '$')
+vim.keymap.set('n', '<S-h>', '^')
+vim.keymap.set('v', '<S-l>', '$')
+vim.keymap.set('v', '<S-h>', '^')
 
 -- U for redo
 vim.keymap.set('n', 'U', '<C-r>')
+
+-- save file
+vim.keymap.set({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
 
 -- better indenting
 vim.keymap.set('v', '<', '<gv')
