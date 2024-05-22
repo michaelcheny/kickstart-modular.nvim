@@ -1,6 +1,6 @@
 return {
   {
-    'dracula/vim',
+    'Mofiqul/dracula.nvim',
     lazy = false,
     priority = 1000,
     config = function()
@@ -8,6 +8,7 @@ return {
     end,
   },
 }
+-- might go back to catppuccin? idk yet
 -- return {
 --   {
 --     'catppuccin/nvim',
