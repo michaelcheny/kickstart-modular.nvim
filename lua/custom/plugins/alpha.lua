@@ -32,6 +32,9 @@ return {
       '⣛⣛⠛⠛⠛⣛⡑⡿⢻⢻⠲⢆⢹⣿⣿⣿⣿⣿⣿⠿⠿⠟⡴⢻⢋⠻⣟⠈⠿⠿',
       '⣿⡿⡿⣿⢷⢤⠄⡔⡘⣃⢃⢰⡦⡤⡤⢤⢤⢤⠒⠞⠳⢸⠃⡆⢸⠄⠟⠸⠛⢿',
       '⡟⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸',
+      '',
+      '',
+      '',
     }
     -- Set menu
     dashboard.section.buttons.val = {
@@ -39,8 +42,8 @@ return {
       dashboard.button('sf', '󰱼  > Search File', '<cmd>Telescope find_files<CR>'),
       dashboard.button('sg', '  > Search Word', '<cmd>Telescope live_grep<CR>'),
       -- dashboard.button('wr', '󰁯  > Restore Session For CD', '<cmd>SessionRestore<CR>'), need to use https://github.com/rmagatti/auto-session for this
-      dashboard.button('r', '  > Recent', ':Telescope oldfiles<CR>'),
-      dashboard.button('q', '  > GTFO', '<cmd>qa<CR>'),
+      dashboard.button('r', '  > Recent', ':lua require("telescope.builtin").oldfiles({ cwd_only = true })<CR>'),
+      dashboard.button('q', '  > Quit', '<cmd>qa<CR>'),
     }
 
     -- dashboard.section.footer.val = fortune()
