@@ -8,6 +8,18 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- jj to <esc>
 vim.keymap.set('i', 'jj', '<esc>')
 
+-- Toggle Diagnostics
+local diagnostics_active = true
+local toggle_diagnostics = function()
+  diagnostics_active = not diagnostics_active
+  if diagnostics_active then
+    vim.diagnostic.show()
+  else
+    vim.diagnostic.hide()
+  end
+end
+vim.keymap.set('n', '<leader>L', toggle_diagnostics, { desc = 'Toggle [L]sp diagnostics' })
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
@@ -17,6 +29,8 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- Center buffer while navigating
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-b>', '<C-b>zz')
+vim.keymap.set('n', '<C-f>', '<C-f>zz')
 vim.keymap.set('n', '{', '{zz')
 vim.keymap.set('n', '}', '}zz')
 vim.keymap.set('n', 'G', 'Gzz')
