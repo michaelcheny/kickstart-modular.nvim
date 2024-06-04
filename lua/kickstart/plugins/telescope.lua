@@ -74,7 +74,7 @@ return {
         },
         pickers = {
           find_files = {
-            hidden = true,
+            hidden = false,
             -- needed to exclude some files & dirs from general search
             -- when not included or specified in .gitignore
             oldfiles = {
@@ -88,6 +88,9 @@ return {
               '--glob=!**/dist/*',
               '--glob=!**/yarn.lock',
               '--glob=!**/package-lock.json',
+              '--glob=!**/app/assets/icons/*',
+              '--glob=!**/app/assets/images/*',
+              '--glob=!**/app/assets/fonts/*',
               '--glob=!**/.bundle/*',
               '--glob=!**/.git/*',
               '--glob=!**/.dockerignore',
