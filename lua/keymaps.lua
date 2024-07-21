@@ -60,6 +60,12 @@ vim.keymap.set('n', '<S-h>', '^')
 vim.keymap.set('v', '<S-l>', '$')
 vim.keymap.set('v', '<S-h>', '^')
 
+-- add new line without insert
+-- vim.keymap.set('n', '<CR>', 'o<Esc>k')
+-- vim.keymap.set('n', '<S-CR>', 'O<Esc>j')
+vim.keymap.set('n', '<CR>', 'm`o<Esc>``')
+vim.keymap.set('n', '<S-CR>', 'm`O<Esc>``')
+
 -- U for redo
 vim.keymap.set('n', 'U', '<C-r>')
 
@@ -90,7 +96,7 @@ end)
 --
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
-vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+vim.keymap.set('t', '<C-Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 -- vim.keymap.set('t', 'jj', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- TIP: Disable arrow keys in normal mode

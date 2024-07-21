@@ -73,6 +73,17 @@ return {
           },
         },
         pickers = {
+          live_grep = {
+            file_ignore_patterns = {
+              '.sql',
+              'Gemfile.lock',
+              'node_modules',
+              '.rubocop_todo.yml',
+            },
+            additional_args = function(_)
+              return { '--hidden' }
+            end,
+          },
           find_files = {
             hidden = false,
             -- needed to exclude some files & dirs from general search
