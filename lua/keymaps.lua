@@ -77,7 +77,7 @@ vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
 
 -- Paste without losing contents of the register
-vim.keymap.set('v', 'p', '"_Dp')
+vim.keymap.set('v', 'p', 'P', { noremap = true })
 
 -- Vim-test
 vim.keymap.set('n', '<leader>tt', ':TestNearest -strategy=neovim_sticky<CR>', { desc = 'Run nearest [T]est in new [T]erminal' })
