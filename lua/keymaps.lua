@@ -61,8 +61,6 @@ vim.keymap.set('v', '<S-l>', '$')
 vim.keymap.set('v', '<S-h>', '^')
 
 -- add new line without insert
--- vim.keymap.set('n', '<CR>', 'o<Esc>k')
--- vim.keymap.set('n', '<S-CR>', 'O<Esc>j')
 vim.keymap.set('n', '<CR>', 'm`o<Esc>``')
 vim.keymap.set('n', '<S-CR>', 'm`O<Esc>``')
 
