@@ -28,8 +28,13 @@ return {
           lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
         }
       end,
+      ft_parsers = {
+        jsonc = 'json',
+      },
       formatters_by_ft = {
         lua = { 'stylua' },
+        json = { 'prettier' },
+        jsonc = { 'prettier' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --

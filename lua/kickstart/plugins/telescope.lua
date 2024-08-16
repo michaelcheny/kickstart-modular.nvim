@@ -79,6 +79,7 @@ return {
               'Gemfile.lock',
               'node_modules',
               '.rubocop_todo.yml',
+              '.git/*',
             },
             additional_args = function(_)
               return { '--hidden' }
