@@ -19,6 +19,7 @@ return {
         'vimdoc',
         'ruby',
         'yaml',
+        'python',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,

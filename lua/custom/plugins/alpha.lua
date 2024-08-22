@@ -41,6 +41,7 @@ return {
       dashboard.button('e', '  > Toggle file explorer', '<cmd>lua require("oil").toggle_float()<cr>'),
       dashboard.button('sf', '󰱼  > Search File', '<cmd>Telescope find_files<CR>'),
       dashboard.button('sg', '  > Search Word', '<cmd>Telescope live_grep<CR>'),
+      dashboard.button('g', '🐙 > Git', '<cmd>LazyGit<cr>'),
       -- dashboard.button('wr', '󰁯  > Restore Session For CD', '<cmd>SessionRestore<CR>'), need to use https://github.com/rmagatti/auto-session for this
       dashboard.button('r', '  > Recent', ':lua require("telescope.builtin").oldfiles({ cwd_only = true })<CR>'),
       dashboard.button('q', '  > Quit', '<cmd>qa<CR>'),

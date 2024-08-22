@@ -108,6 +108,7 @@ return {
               '--glob=!**/.dockerignore',
               '--glob=!**/.devcontainer/*',
               '--glob=!**/.fonts/*',
+              '--glob=!**/.liquid',
               '--glob=!**/.irb_history',
               '--glob=!**/.irbrc',
               '--glob=!**/.idea/*',
