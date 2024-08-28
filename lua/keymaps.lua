@@ -57,7 +57,7 @@ vim.keymap.set('v', '<A-k>', ":m '<-2<cr>gv=gv", { desc = 'Move Up' })
 -- H and L to jump start/end of line
 vim.keymap.set('n', '<S-l>', '$')
 vim.keymap.set('n', '<S-h>', '^')
-vim.keymap.set('v', '<S-l>', '$')
+vim.keymap.set('v', '<S-l>', '$h')
 vim.keymap.set('v', '<S-h>', '^')
 
 -- add new line without insert
