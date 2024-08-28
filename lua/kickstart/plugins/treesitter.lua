@@ -1,6 +1,9 @@
 return {
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
+    dependencies = {
+      'RRethy/nvim-treesitter-endwise',
+    },
     build = ':TSUpdate',
     opts = {
       ensure_installed = {
