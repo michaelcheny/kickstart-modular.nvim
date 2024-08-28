@@ -12,27 +12,38 @@ return {
     -- Optional dependencies
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
+      -- hidden files
+      local hidden_files = {
+        '..',
+        '.bundle',
+        '.git',
+        '.ruby-lsp',
+        '.irb_history',
+        '.irbrc',
+        '.pryrc',
+        '.traceroute.yml',
+        '.travis.yml',
+        '.rspec',
+        '.rubocop_todo.yml',
+        'dump.rdb',
+      }
       require('oil').setup {
-        -- use_default_keymaps = false,
-        -- keymaps = {
-        --   ["g?"] = "actions.show_help",
-        --   ["<CR>"] = "actions.select",
-        --   ["<C-\\>"] = "actions.select_split",
-        --   ["<C-enter>"] = "actions.select_vsplit", -- this is used to navigate left
-        --   ["<C-t>"] = "actions.select_tab",
-        --   ["<C-p>"] = "actions.preview",
-        --   ["<C-c>"] = "actions.close",
-        --   ["<C-r>"] = "actions.refresh",
-        --   ["-"] = "actions.parent",
-        --   ["_"] = "actions.open_cwd",
-        --   ["`"] = "actions.cd",
-        --   ["~"] = "actions.tcd",
-        --   ["gs"] = "actions.change_sort",
-        --   ["gx"] = "actions.open_external",
-        --   ["g."] = "actions.toggle_hidden",
-        -- },
+        default_file_explorer = true,
+        skip_confirm_for_simple_edits = true,
         view_options = {
           show_hidden = true,
+          natural_order = true,
+          -- is_always_hidden = function(name, _)
+          --   return name == '..' or name == '.git' or name == '.irb_history' or name == 'irbrc' or name == '.pryrc' or name == '.rubocop_todo.yml'
+          -- end,
+          is_always_hidden = function(name, _)
+            for _, hidden_name in ipairs(hidden_files) do
+              if name == hidden_name then
+                return true
+              end
+            end
+            return false
+          end,
         },
       }
     end,
