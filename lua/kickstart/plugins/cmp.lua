@@ -34,6 +34,24 @@ return {
       --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+      {
+        {
+          'Exafunction/codeium.nvim',
+          cmd = 'Codeium',
+          build = ':Codeium Auth',
+          opts = {
+            enable_chat = true,
+          },
+        },
+      },
+      ---@param opts cmp.ConfigSchema
+      opts = function(_, opts)
+        table.insert(opts.sources, 1, {
+          name = 'codeium',
+          group_index = 1,
+          priority = 100,
+        })
+      end,
     },
     config = function()
       -- See `:help cmp`
@@ -105,6 +123,7 @@ return {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+          { name = 'codeium' },
         },
       }
     end,
