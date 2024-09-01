@@ -20,6 +20,6 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '<leader>e', ':Neotree toggle<CR>', { desc = 'NeoTre[e] toggle' } },
+    { '<leader>n', ':Neotree toggle<CR>', { desc = '[N]eoTree toggle' } },
   },
 }
