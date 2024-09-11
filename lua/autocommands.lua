@@ -44,3 +44,28 @@ vim.api.nvim_create_user_command('RotateWindows', function()
     vim.api.nvim_err_writeln('You can only swap 2 open windows. Found ' .. num_eligible_windows .. '.')
   end
 end, {})
+
+-- [[ Yank and return to cursor position ]] (https://nanotipsforvim.prose.sh/sticky-yank)
+local cursorPreYank
+
+-- Save cursor position before yank
+vim.keymap.set({ 'n', 'x' }, 'y', function()
+  cursorPreYank = vim.api.nvim_win_get_cursor(0)
+  return 'y'
+end, { expr = true })
+
+-- Save cursor position before yank for the 'Y' command (yank until end of line)
+vim.keymap.set('n', 'Y', function()
+  cursorPreYank = vim.api.nvim_win_get_cursor(0)
+  return 'y$'
+end, { expr = true })
+
+-- Restore the cursor position after yank
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    if vim.v.event.operator == 'y' and cursorPreYank then
+      vim.api.nvim_win_set_cursor(0, cursorPreYank)
+    end
+  end,
+})
+-- end [[ Yank and return to cursor position ]]
