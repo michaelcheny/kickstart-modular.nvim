@@ -76,6 +76,7 @@ return {
           live_grep = {
             file_ignore_patterns = {
               '.sql',
+              '.json',
               'Gemfile.lock',
               'node_modules',
               '.rubocop_todo.yml',
