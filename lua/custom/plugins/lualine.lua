@@ -7,6 +7,14 @@ return {
         theme = 'kanagawa',
         -- theme = 'dracula',
       },
+      sections = {
+        lualine_c = {
+          {
+            'filename',
+            path = 1, -- 1 means relative path, 0 would be just the filename
+          },
+        },
+      },
     }
   end,
 }
