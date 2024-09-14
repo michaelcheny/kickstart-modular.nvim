@@ -114,5 +114,12 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- keymap to open toggleterm in a vertical split
 -- vim.keymap.set('n', '<leader>v\\', ':ToggleTerm direction=vertical size=65<cr>')
 -- vim.keymap.set('n', '<leader>h\\', ':ToggleTerm direction=horizontal size=55<cr>')
+--
+-- Open in GH
+-- for repository page
+-- vim.keymap.set('n', '<Leader>gr', ':OpenInGHRepo <CR>', { silent = true, noremap = true })
+-- for current file page
+vim.keymap.set('n', '<Leader>gf', ':OpenInGHFile <CR>', { silent = true, noremap = true })
+vim.keymap.set('v', '<Leader>gf', ':OpenInGHFileLines <CR>', { silent = true, noremap = true })
 
 -- vim: ts=2 sts=2 sw=2 et
