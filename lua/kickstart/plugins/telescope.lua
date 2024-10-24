@@ -100,6 +100,7 @@ return {
               '--glob=!**/build/*',
               '--glob=!**/dist/*',
               '--glob=!**/yarn.lock',
+              '--glob=!**/Extras/*',
               '--glob=!**/package-lock.json',
               '--glob=!**/app/assets/icons/*',
               '--glob=!**/app/assets/images/*',
