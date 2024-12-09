@@ -58,26 +58,55 @@
 -- }
 
 -- testing kanagawa out for a bit... lets see
+-- return {
+--   {
+--     'rebelot/kanagawa.nvim',
+--     lazy = false,
+--     priority = 1000,
+--     config = function()
+--       require('kanagawa').setup {
+--         colors = {
+--           theme = {
+--             all = {
+--               ui = {
+--                 bg_gutter = 'none',
+--               },
+--             },
+--           },
+--         },
+--       }
+--       vim.cmd.colorscheme 'kanagawa'
+--     end,
+--   },
+-- }
+
 return {
   {
-    'rebelot/kanagawa.nvim',
+    'neanias/everforest-nvim',
+    version = false,
     lazy = false,
     priority = 1000,
     config = function()
-      require('kanagawa').setup {
-        colors = {
-          theme = {
-            all = {
-              ui = {
-                bg_gutter = 'none',
-              },
-            },
-          },
-        },
+      require('everforest').setup {
+        -- background = 'soft',
+        -- on_highlights = function(hl, palette)
+        --   hl.DiagnosticError = { fg = palette.red, bg = palette.none, sp = palette.red }
+        --   hl.DiagnosticWarn = { fg = palette.orange, bg = palette.none, sp = palette.orange }
+        --   hl.DiagnosticInfo = { fg = palette.blue, bg = palette.none, sp = palette.blue }
+        --   hl.DiagnosticHint = { fg = palette.green, bg = palette.none, sp = palette.green }
+        -- end,
+        -- colors = {
+        --   theme = {
+        --     all = {
+        --       ui = {
+        --         bg_gutter = 'none',
+        --       },
+        --     },
+        --   },
+        -- },
       }
-      vim.cmd.colorscheme 'kanagawa'
+      vim.cmd.colorscheme 'everforest'
     end,
   },
 }
-
 -- vim: ts=2 sts=2 sw=2 et

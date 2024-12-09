@@ -4,7 +4,8 @@ return {
   config = function()
     require('lualine').setup {
       options = {
-        theme = 'kanagawa',
+        theme = 'everforest',
+        -- theme = 'kanagawa',
         -- theme = 'dracula',
       },
       sections = {
