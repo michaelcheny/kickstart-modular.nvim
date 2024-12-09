@@ -42,9 +42,10 @@ return {
       dashboard.button('sf', '󰱼  > Search File', '<cmd>Telescope find_files<CR>'),
       dashboard.button('sg', '  > Search Word', '<cmd>Telescope live_grep<CR>'),
       dashboard.button('gg', '  > Git', '<cmd>LazyGit<cr>'),
-      -- dashboard.button('wr', '󰁯  > Restore Session For CD', '<cmd>SessionRestore<CR>'), need to use https://github.com/rmagatti/auto-session for this
+      dashboard.button('l', '󰒲  > Lazy', ':Lazy<cr>'),
       dashboard.button('so', '  > Recent', ':lua require("telescope.builtin").oldfiles({ cwd_only = true })<CR>'),
       dashboard.button('q', '  > Quit', '<cmd>qa<CR>'),
+      -- dashboard.button('wr', '󰁯  > Restore Session For CD', '<cmd>SessionRestore<CR>'), need to use https://github.com/rmagatti/auto-session for this
     }
 
     -- dashboard.section.footer.val = fortune()

@@ -9,6 +9,7 @@ return {
           require('conform').format { async = true, lsp_fallback = true }
         end,
         mode = '',
+        -- mode = { 'n', 'v' },
         desc = '[F]ormat buffer',
       },
     },
@@ -35,6 +36,7 @@ return {
         lua = { 'stylua' },
         json = { 'prettier' },
         jsonc = { 'prettier' },
+        -- ruby = { 'rubocop' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
