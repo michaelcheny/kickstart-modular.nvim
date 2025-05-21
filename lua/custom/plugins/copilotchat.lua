@@ -6,6 +6,7 @@ return {
   },
   build = 'make tiktoken',
   opts = {
-    model = 'gpt-4o',
+    model = 'claude-3.5-sonnet',
+    -- model = 'gpt-4o',
   },
 }
