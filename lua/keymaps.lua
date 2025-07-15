@@ -122,4 +122,17 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<Leader>gf', ':OpenInGHFile <CR>', { silent = true, noremap = true })
 vim.keymap.set('v', '<Leader>gf', ':OpenInGHFileLines <CR>', { silent = true, noremap = true })
 
+-- CopilotChat
+vim.keymap.set('n', '<leader>cc', ':CopilotChat<CR>', { desc = 'Start CopilotChat (Normal)' })
+vim.keymap.set('v', '<leader>cc', ':CopilotChat<CR>', { desc = 'Start CopilotChat (Visual)' })
+vim.keymap.set('n', '<leader>ce', ':CopilotChatExplain<CR>', { desc = 'Explain code with CopilotChat' })
+vim.keymap.set('v', '<leader>ce', ':CopilotChatExplain<CR>', { desc = 'Explain selection with CopilotChat' })
+vim.keymap.set('n', '<leader>cf', ':CopilotChatFix<CR>', { desc = 'Fix code with CopilotChat' })
+vim.keymap.set('v', '<leader>cf', ':CopilotChatFix<CR>', { desc = 'Fix selection with CopilotChat' })
+vim.keymap.set('n', '<leader>cr', ':CopilotChatRefactor<CR>', { desc = 'Refactor code with CopilotChat' })
+vim.keymap.set('v', '<leader>cr', ':CopilotChatRefactor<CR>', { desc = 'Refactor selection with CopilotChat' })
+vim.keymap.set('n', '<leader>cq', ':CopilotChatQuickfix<CR>', { desc = 'Quickfix with CopilotChat' })
+vim.keymap.set('n', '<leader>co', ':CopilotChatOptimize<CR>', { desc = 'Optimize code with CopilotChat' })
+vim.keymap.set('v', '<leader>co', ':CopilotChatOptimize<CR>', { desc = 'Optimize selection with CopilotChat' })
+
 -- vim: ts=2 sts=2 sw=2 et
