@@ -15,6 +15,11 @@ return {
             path = 1, -- 1 means relative path, 0 would be just the filename
           },
         },
+        lualine_x = {
+          function()
+            return '󰚩 ' .. (vim.g.copilotchat_mode or 'DevMode')
+          end,
+        },
       },
     }
   end,
